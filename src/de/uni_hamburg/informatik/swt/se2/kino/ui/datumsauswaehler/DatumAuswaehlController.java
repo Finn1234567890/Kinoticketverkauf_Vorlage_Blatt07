@@ -2,6 +2,9 @@ package de.uni_hamburg.informatik.swt.se2.kino.ui.datumsauswaehler;
 
 import javax.swing.JPanel;
 
+import de.uni_hamburg.informatik.swt.se2.kino.ui.beobachterMuster.BeobachtbaresObjekt;
+import de.uni_hamburg.informatik.swt.se2.kino.ui.beobachterMuster.Beobachter;
+import de.uni_hamburg.informatik.swt.se2.kino.ui.kasse.KassenController;
 import de.uni_hamburg.informatik.swt.se2.kino.wertobjekte.Datum;
 
 /**
@@ -13,7 +16,7 @@ import de.uni_hamburg.informatik.swt.se2.kino.wertobjekte.Datum;
  * @author SE2-Team
  * @version SoSe 2024
  */
-public class DatumAuswaehlController
+public class DatumAuswaehlController extends BeobachtbaresObjekt
 {
     private DatumAuswaehlView _view;
     private Datum _ausgewaehltesDatum;
@@ -38,7 +41,9 @@ public class DatumAuswaehlController
         _ausgewaehltesDatum = _ausgewaehltesDatum.vorherigerTag();
         _view.getDatumLabel()
                 .setText(_ausgewaehltesDatum.getFormatiertenString());
-        //TODO meldeAenderung() --> Neues Datum --> --> KassenController.beachterAenderung() --> KassenController.setzeTagesplanFuerAusgewaehltesDatum()
+
+        //TODO meldeAenderung() --> Neues Datum --> --> KassenController.beachteAenderung() --> KassenController.setzeTagesplanFuerAusgewaehltesDatum()
+        meldeAenderung();
     }
 
     /**
@@ -50,6 +55,7 @@ public class DatumAuswaehlController
         _view.getDatumLabel()
                 .setText(_ausgewaehltesDatum.getFormatiertenString());
         //TODO meldeAenderung() --> Neues Datum --> KassenController.setzeTagesplanFuerAusgewaehltesDatum()
+        meldeAenderung();
     }
 
     /**
