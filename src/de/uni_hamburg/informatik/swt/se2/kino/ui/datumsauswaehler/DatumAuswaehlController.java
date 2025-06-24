@@ -38,6 +38,7 @@ public class DatumAuswaehlController
         _ausgewaehltesDatum = _ausgewaehltesDatum.vorherigerTag();
         _view.getDatumLabel()
                 .setText(_ausgewaehltesDatum.getFormatiertenString());
+        //TODO meldeAenderung() --> Neues Datum --> --> KassenController.beachterAenderung() --> KassenController.setzeTagesplanFuerAusgewaehltesDatum()
     }
 
     /**
@@ -48,6 +49,7 @@ public class DatumAuswaehlController
         _ausgewaehltesDatum = _ausgewaehltesDatum.naechsterTag();
         _view.getDatumLabel()
                 .setText(_ausgewaehltesDatum.getFormatiertenString());
+        //TODO meldeAenderung() --> Neues Datum --> KassenController.setzeTagesplanFuerAusgewaehltesDatum()
     }
 
     /**

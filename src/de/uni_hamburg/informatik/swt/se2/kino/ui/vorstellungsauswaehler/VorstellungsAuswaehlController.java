@@ -37,7 +37,7 @@ public class VorstellungsAuswaehlController
      */
     private void vorstellungWurdeAusgewaehlt()
     {
-
+        //TODO meldeAenderung() --> KassenController.beachteAenderung() --> KassenController.setzeAusgewaehlteVorstellung()
     }
 
     /**

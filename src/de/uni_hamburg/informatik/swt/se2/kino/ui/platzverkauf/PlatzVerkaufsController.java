@@ -61,6 +61,7 @@ public class PlatzVerkaufsController
         _view.getPlatzplan().addPlatzSelectionListener(
                 event -> reagiereAufNeuePlatzAuswahl(event
                         .getAusgewaehltePlaetze()));
+
     }
 
     /**
@@ -118,6 +119,7 @@ public class PlatzVerkaufsController
      * Entität. Wenn die Vorstellung gesetzt wird, muss die Anzeige 
      * aktualisiert werden. Die Vorstellung darf auch null sein.
      */
+    //soll vom KassenVerkaufscontroller aufgerufen werden, falls Aenderung vom Vorstellungsauswaehlcontroller gemeldet
     public void setVorstellung(Vorstellung vorstellung)
     {
         _vorstellung = vorstellung;
@@ -157,6 +159,7 @@ public class PlatzVerkaufsController
         Set<Platz> plaetze = _view.getPlatzplan().getAusgewaehltePlaetze();
         vorstellung.verkaufePlaetze(plaetze);
         aktualisierePlatzplan();
+        //TODO ??? --> Wenn aktuelle Vorstellung entspr vom KasenController aufgerufen wird (s. TODO VorstellungsAuswahlController), sollte das hier automatisch solved sein
     }
 
     /**
@@ -167,5 +170,6 @@ public class PlatzVerkaufsController
         Set<Platz> plaetze = _view.getPlatzplan().getAusgewaehltePlaetze();
         vorstellung.stornierePlaetze(plaetze);
         aktualisierePlatzplan();
+        //TODO ??? --> Wenn aktuelle Vorstellung entspr vom KasenController aufgerufen wird (s. TODO VorstellungsAuswahlController), sollte das hier automatisch solved sein
     }
 }
